@@ -47,22 +47,46 @@ def eulermethod(t0,tf,f0,f1,dt = 0.001):
 
     npt = np.linspace(float(t0),float(tf),int((tf-t0)/dt))
     
-    uk = npt
-    upk = npt
+    uk = np.zeros(int((tf-t0)/dt))
+    upk = np.zeros(int((tf-t0)/dt))
         
-    count = 0
+    count = 1
+    uk[0] = float(f0)
+    upk[0] = float(f1)
+    
+    while (count < npt.size):
+        uk[count] = uk[count-1] + dt*upk[count-1]
+        upk[count] = upk[count-1] - dt*uk[count-1]
+        count += 1
+    
+    plotitokay(npt,uk,upk)
+
+
+def heun(t0,tf,f0,f1,dt = 0.001):
+    
+    npt = np.linspace(float(t0),float(tf),int((tf-t0)/dt))
+    
+    uk = np.zeros(int((tf-t0)/dt))
+    upk = np.zeros(int((tf-t0)/dt))
+    
+    ubar = 0.0
+    upbar = 0.0
+    count = 1
+    
     uk[0] = f0
     upk[0] = f1
-    for ti in np.nditer(npt):
-        uk[count] = uk[count-1]+dt*upk[count-1]
-        upk[count] = upk[count-1]-dt*uk[count-1]
+    
+    while (count < npt.size):
+        ubar = uk[count-1] + dt*upk[count-1]
+        upbar = upk[count-1] - dt*uk[count-1]
+        uk[count] = uk[count-1] + (dt/2)*(upk[count-1]+ubar)
+        upk[count] = uk[count-1] - (dt/2)*(upbar+uk[count-1])
         count += 1
         
     plotitokay(npt,uk,upk)
-
     
 def plotitokay(t,uk,upk):
-    fig = plt.figure(figsize = (12,8))
+    fig = plt.figure(figsize = (16,9))
     a = plt.axes()
     
     a.plot(t,uk, 'b', label = "$u(t)$")
