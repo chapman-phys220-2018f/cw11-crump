@@ -1,6 +1,6 @@
 # PHYS220/MATH220/CPSC220 CW 11
 
-**Author(s):** **CHANGEME**
+**Author(s):** **Natanael Alpay, Conner Carnahan**
 
 ## Specification
 
@@ -39,9 +39,9 @@ This week we will continue the classwork from last week and implement the method
 
 ## Assessment
 
-Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have. You can use the GitHub web interface to edit this file directly for now.
+In this week assigment we programed/coded the approximation methods we saw in last week class assigment, this was an interesting assigment that came with a couple chalanges such as to translate the formula to a code(that works, with minimal number of errors).
 
-**CHANGEME**
+**Natanael Alpay, Conner Carnahan**
 
 ## Honor Pledge
 
@@ -52,4 +52,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAMES**
+**Natanael Alpay, Conner Carnahan**
