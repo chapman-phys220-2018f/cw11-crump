@@ -5,6 +5,10 @@
 # Name: Conner Carnahan
 # Student ID: 1614309
 # Email: carna104@mail.chapman.edu
+#FULL NAME :NATANAEL ALPAY
+#ID        :002285534
+#email:alpay100@mail.chapman.edu
+
 # Course: PHYS220/MATH220/CPSC220 Fall 2018
 # Assignment: HW 10
 ###
@@ -12,6 +16,7 @@
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
+import array as ar
 
 def eulermethod(t0,tf,f0,f1,N):
 
@@ -127,8 +132,8 @@ def runge2(t0,tf,f0,f1,N):
         count += 1
         
     plotitokay(npt,uk,upk, "Runge-Kutta 4th Order Method for N = " + str(N))
-        
-def plotitokay(t,uk,upk, titl):
+            
+def plotitokay(t,uk,upk):
     fig = plt.figure(figsize = (12,8))
     a = plt.axes()
     
