@@ -34,7 +34,7 @@ def eulermethod(t0,tf,f0,f1,N):
         upk[count] = upk[count-1] - dt*uk[count-1]
         count += 1
     
-    plotitokay(npt,uk,upk, "Euler's Method for N = " + str(N))
+    plot(npt,uk,upk, "Euler's Method for N = " + str(N))
 
 
 def heun(t0,tf,f0,f1,N):
@@ -59,7 +59,7 @@ def heun(t0,tf,f0,f1,N):
         upk[count] = upk[count-1] - (dt/2)*(ubar + uk[count-1])
         count += 1
         
-    plotitokay(npt,uk,upk, "Heun's Method for N = " + str(N))
+    plot(npt,uk,upk, "Heun's Method for N = " + str(N))
 
     
 def rungekutta1(t0,tf,f0,f1,N):
@@ -90,7 +90,7 @@ def rungekutta1(t0,tf,f0,f1,N):
         upk[count] = upk[count-1] + vK2
         count += 1
         
-    plotitokay(npt,uk,upk, "Runge-Kutta 2nd Order for N = " + str(N))
+    plot(npt,uk,upk, "Runge-Kutta 2nd Order for N = " + str(N))
         
 
 def runge2(t0,tf,f0,f1,N):
@@ -131,15 +131,15 @@ def runge2(t0,tf,f0,f1,N):
         
         count += 1
         
-    plotitokay(npt,uk,upk, "Runge-Kutta 4th Order Method for N = " + str(N))
+    plot(npt,uk,upk, "Runge-Kutta 4th Order Method for N = " + str(N))
             
-def plotitokay(t,uk,upk):
+def plot(t,uk,upk,N):
     fig = plt.figure(figsize = (12,8))
     a = plt.axes()
     
     a.plot(t,uk, 'b', label = "$x(t)$")
     a.plot(t,upk, 'r', label = "$v(t)$")
     
-    plt.title(titl)
+    plt.title("title")
     a.legend()
     plt.show()
